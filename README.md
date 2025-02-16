@@ -1,21 +1,8 @@
 # Aoc
 
-**TODO: Add description**
+Things I've learned:
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `aoc` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:aoc, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/aoc>.
-
+- Elixir has an `:infinity` constant available, but it doesn't play nicely with arithmetic.
+For example you can't do `:infinity + 1`.
+- You can declare module level constants with `@infinity = 999_999_999`.
+- Printing lists of numbers is weird. Use `IO.inspect(stuff, charlists: false)`

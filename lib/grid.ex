@@ -128,4 +128,12 @@ defmodule Grid do
         |> then(&IO.puts/1)
     end
   end
+
+  # Many of these problems have a (S)tart, an (E)nd and some walls.
+  def find_initial_config(grid) do
+    startPos = grid |> Grid.find(&(&1 == "S")) |> then(&List.first/1)
+    endPos = grid |> Grid.find(&(&1 == "E")) |> then(&List.first/1)
+    walls = Grid.find(grid, &(&1 == "#"))
+    {startPos, endPos, walls}
+  end
 end

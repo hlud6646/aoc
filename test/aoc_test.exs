@@ -1,7 +1,10 @@
 defmodule AocTest do
   use ExUnit.Case
+  ExUnit.configure(formatters: [ExUnit.CLIFormatter], trace: true)
 
-  doctest Aoc
+  # What is this? Is this validating the documentation?
+  # Or is it running code examples in the module docs?
+  doctest Solution1
 
   test "Can read input file" do
     path =
@@ -45,11 +48,13 @@ defmodule AocTest do
     assert Solution5.solve2() == 6004
   end
 
+  # TODO
   # test "Day 6" do
   #   assert Solution6.solve == 42
   #   assert Solution6.solve2 == 42
   # end
 
+  # TODO: Find a faster solution.
   @tag :skip
   test "Day 7" do
     assert Solution7.solve() == 5_702_958_180_383
@@ -61,6 +66,7 @@ defmodule AocTest do
     assert Solution8.solve2() == 813
   end
 
+  # TODO: Find a faster solution.
   @tag :skip
   test "Day 9" do
     assert Solution9.solve() == 6_288_707_484_810
@@ -82,40 +88,52 @@ defmodule AocTest do
     assert Solution12.solve2() == 904_114
   end
 
-  # test "Day 13" do
-  #   assert Solution13.solve == 42
-  #   assert Solution13.solve2 == 42
-  # end
+  test "Day 13" do
+    assert Solution13.solve() > 0
+    assert Solution13.solve2() > 0
+  end
 
-  # test "Day 14" do
-  #   assert Solution14.solve == 42
-  #   assert Solution14.solve2 == 42
-  # end
+  # Note: There is no part 2 for this one, since solving it involves inspecting
+  # the program output.
+  test "Day 14" do
+    assert Solution14.solve() == 228_457_125
+  end
 
-  # test "Day 15" do
-  #   assert Solution15.solve == 42
-  #   assert Solution15.solve2 == 42
-  # end
+  # TODO: Find a faster solution.
+  # TODO: Part 2.
+  @tag :skip
+  test "Day 15" do
+    assert Solution15.solve() == 1_406_628
+    # assert Solution15.solve2 == 42
+  end
 
-  # test "Day 16" do
-  #   assert Solution16.solve == 42
-  #   assert Solution16.solve2 == 42
-  # end
+  # TODO: Find a faster solution.
+  @tag :skip
+  test "Day 16" do
+    assert Solution16.solve() == 99488
+    # assert Solution16.solve2() == 516
+  end
 
-  # test "Day 17" do
-  #   assert Solution17.solve == 42
-  #   assert Solution17.solve2 == 42
-  # end
+  # TODO: Part 2.
+  test "Day 17" do
+    assert Solution17.solve() == "7,3,0,5,7,1,4,0,5"
+    # assert Solution17.solve2 == 42
+  end
 
-  # test "Day 18" do
-  #   assert Solution18.solve == 42
-  #   assert Solution18.solve2 == 42
-  # end
+  test "Day 18 (1)" do
+    assert Solution18.solve() == 306
+  end
 
-  # test "Day 19" do
-  #   assert Solution19.solve == 42
-  #   assert Solution19.solve2 == 42
-  # end
+  # TODO: Find a faster solution.
+  @tag :skip
+  test "Day 18 (2)" do
+    assert Solution18.solve2() == "38,63"
+  end
+
+  test "Day 19" do
+    assert Solution19.solve() == 280
+    assert Solution19.solve2() == 606_411_968_721_181
+  end
 
   # test "Day 20" do
   #   assert Solution20.solve == 42

@@ -1,4 +1,4 @@
-defmodule Solutions.SolutionXVII do
+defmodule Solution17 do
   import Enum
 
   def f(_, _, _, i, program) when i >= length(program) do
@@ -74,7 +74,6 @@ defmodule Solutions.SolutionXVII do
     f(28_066_687, 0, 0, 0, [2, 4, 1, 1, 7, 5, 4, 6, 0, 3, 1, 4, 5, 5, 3, 0])
     |> map(&to_string/1)
     |> join(",")
-    |> then(&IO.puts/1)
   end
 
   def solve2 do
@@ -83,6 +82,5 @@ defmodule Solutions.SolutionXVII do
 
     1..10000
     |> map(fn a -> {a, f(a, 0, 0, 0, p)} end)
-    |> map(&IO.inspect/1)
   end
 end

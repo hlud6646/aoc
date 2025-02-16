@@ -1,4 +1,4 @@
-defmodule Solutions.SolutionIXX do
+defmodule Solution19 do
   import Enum
 
   # This is another one where if you cannot cache it's a lot harder.
@@ -44,8 +44,8 @@ defmodule Solutions.SolutionIXX do
   # ---
   # Note: There is an optimization available for part1, where you can use Enum.reduce_while
   # in stead of reduce, and a boolean that represents whether the arrangement is possible
-  # in place of the number that counts the solutions. It's fancy, and I hadn't seen 
-  # reduce_while before, but this version is much better. 
+  # in place of the number that counts the solutions. It's fancy, and I hadn't seen
+  # reduce_while before, but this version is much better.
   # Note also the nice separation of cache lookup and recursive hoo-ha into different
   # methods.
   def count_solutions(arrangement, towels, cache) do
@@ -78,13 +78,7 @@ defmodule Solutions.SolutionIXX do
   # ---
 
   def read do
-    path =
-      Path.join([
-        :code.priv_dir(:aoc),
-        "static",
-        "input",
-        "19.txt"
-      ])
+    path = Application.app_dir(:aoc, "priv/static/input/19.txt")
 
     case File.read(path) do
       {:ok, contents} ->

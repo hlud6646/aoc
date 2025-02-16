@@ -70,10 +70,8 @@ defmodule Solution12 do
     |> map(fn region -> region |> map(fn {pos, _} -> pos end) end)
   end
 
-  @doc """
-  Compute the edges of a plot.
-  Each edge is represented as a tuple of {y, x, orientation}.
-  """
+  # Compute the edges of a plot.
+  # Each edge is represented as a tuple of {y, x, orientation}.
   defp edges({row, col}) do
     {i, j} = {2 * row, 2 * col}
 
@@ -89,9 +87,7 @@ defmodule Solution12 do
     ]
   end
 
-  @doc """
-  Compute the oriented boundary of a region.
-  """
+  # Compute the oriented boundary of a region.
   defp boundary(region) do
     region
     |> flat_map(&edges/1)
@@ -121,9 +117,7 @@ defmodule Solution12 do
     f.(vs) + f.(hs)
   end
 
-  @doc """
-  Find the sum of scores for all regions, given a scoring function.
-  """
+  # Find the sum of scores for all regions, given a scoring function.
   defp f12(score) do
     read()
     |> filter(&(count(&1) > 0))
